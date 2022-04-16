@@ -16,7 +16,7 @@ def findCheapestPrice(n: int, flights: List[List[int]], src: int, dst: int, k: i
     distances[src], current_stops[src] = 0, 0
 
     heap = [(0, 0, src)]
-    print(adj)
+
     while heap:
 
         cost, stops, node = heapq.heappop(heap)
@@ -29,13 +29,9 @@ def findCheapestPrice(n: int, flights: List[List[int]], src: int, dst: int, k: i
 
         for neighbor, neighborCost in adj.get(node, []):
             newCost = cost + neighborCost
-            if distances[neighbor] > newCost:
-                heapq.heappush(heap, (newCost, stops + 1, neighbor))
-                distances[neighbor] = newCost
-            elif stops < current_stops[neighbor]:
+            if distances[neighbor] > newCost or stops < current_stops[neighbor]:
                 distances[neighbor] = newCost
                 heapq.heappush(heap, (newCost, stops + 1, neighbor))
-
             current_stops[neighbor] = stops
     return -1 if distances[dst] == float("inf") else distances[dst]
 
