@@ -11,3 +11,5 @@ The solution set must not contain duplicate subsets. Return the solution in any 
 Time complexity: O(n * 2 ^ n). there is 2 ^ n solutions and we have to copy each one in the solutions array
 
 Space complexity: O(n).
+
+* keyword : backtracking
