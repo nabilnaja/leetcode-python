@@ -8,6 +8,6 @@ The solution set must not contain duplicate subsets. Return the solution in any 
 
 * Complexity analysis
 
-Time complexity: .
+Time complexity: O(n * 2 ^ n). there is 2 ^ n solutions and we have to copy each one in the solutions array
 
-Space complexity: .
+Space complexity: O(n).
