@@ -8,8 +8,8 @@ A mapping of digit to letters (just like on the telephone buttons) is given belo
 
 * Complexity analysis Backtracking
 
-Time complexity: n * 4 ^ n.
+Time complexity: O(n * 4 ^ n).
 
-Space complexity: n.
+Space complexity: O(n).
 
 * keyword : backtracking
