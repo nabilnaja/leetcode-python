@@ -7,8 +7,8 @@ Given an m x n grid of characters board and a string word, return true if word e
 The word can be constructed from letters of sequentially adjacent cells, where adjacent cells are horizontally or vertically neighboring. The same letter cell may not be used more than once.
 * Complexity analysis Backtracking
 
-Time complexity: .
+Time complexity: O(m * n * 3 ^ l).
 
-Space complexity: .
+Space complexity: O(l).
 
 * keyword : backtracking
