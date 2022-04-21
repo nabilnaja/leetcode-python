@@ -1,15 +1,13 @@
-#### 17. Letter Combinations of a Phone Number
+#### 22. Generate Parentheses
 
 * Description
 
-Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent. Return the answer in any order.
+Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
 
-A mapping of digit to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters.
+* Complexity analysis
 
-* Complexity analysis Backtracking
+Time complexity: .
 
-Time complexity: O(n * 4 ^ n).
-
-Space complexity: O(n).
+Space complexity: .
 
 * keyword : backtracking
