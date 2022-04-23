@@ -13,5 +13,4 @@ class Solution:
             first.next = swap(second.next)
             second.next = first
             return second
-
         return swap(head)
