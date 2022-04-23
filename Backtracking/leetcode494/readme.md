@@ -14,8 +14,8 @@ Return the number of different expressions that you can build, which evaluates t
 
 * Complexity analysis Backtracking
 
-Time complexity: .
+Time complexity: O(2 ^ n).
 
-Space complexity: .
+Space complexity: O(n).
 
 * keyword : backtracking
