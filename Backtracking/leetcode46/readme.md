@@ -6,8 +6,8 @@ Given an array nums of distinct integers, return all the possible permutations. 
 
 * Complexity analysis Backtracking
 
-Time complexity: .
+Time complexity: O( n * n!).
 
-Space complexity: .
+Space complexity: O(n!).
 
 * keyword : backtracking
