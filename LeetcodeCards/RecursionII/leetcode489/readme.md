@@ -14,8 +14,8 @@ Design an algorithm to clean the entire room using the following APIs:
 
 * Complexity analysis
 
-Time complexity: .
+Time complexity: O(n - m). n is the number of cells in the room, and m is the number of obstacles
 
-Space complexity: .
+Space complexity: O(n - m).
 
 * keyword : Recursion-card backtracking
