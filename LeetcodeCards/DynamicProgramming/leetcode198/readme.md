@@ -9,10 +9,16 @@ it will automatically contact the police if two adjacent houses were broken into
 Given an integer array nums representing the amount of money of each house, return the maximum amount of money you can
 rob tonight without alerting the police.
 
-* Complexity analysis
+* Complexity analysis bottom-up
 
-Time complexity: .
+Time complexity: O(n).
 
-Space complexity: .
+Space complexity: O(1).
+
+* Complexity analysis top-down
+
+Time complexity: O(n).
+
+Space complexity: O(n).
 
 * keyword : dynamic-programming-card
