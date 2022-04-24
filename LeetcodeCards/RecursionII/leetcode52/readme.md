@@ -8,8 +8,8 @@ Given an integer n, return the number of distinct solutions to the n-queens puzz
 
 * Complexity analysis
 
-Time complexity: .
+Time complexity: O(n!).
 
-Space complexity: .
+Space complexity: O(n).
 
 * keyword : Recursion-card backtracking
