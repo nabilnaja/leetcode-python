@@ -3,6 +3,21 @@ from typing import List
 
 class Solution:
 
+    def robBU(self, nums: List[int]) -> int:
+        if not nums:
+            return 0
+
+        N = len(nums)
+
+        rob_next_plus_one = 0
+        rob_next = nums[N - 1]
+
+        for i in range(N - 2, -1, -1):
+            best = max(rob_next_plus_one + nums[i], rob_next)
+            rob_next_plus_one, rob_next = rob_next, best
+
+        return rob_next
+
     def robTD(self, nums: List[int]) -> int:
         if not nums:
             return 0
