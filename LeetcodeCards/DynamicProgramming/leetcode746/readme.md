@@ -11,14 +11,14 @@ Return the minimum cost to reach the top of the floor.
 
 * Complexity analysis bottom-up
 
-Time complexity: .
+Time complexity: O(n).
 
-Space complexity: .
+Space complexity: 0(1).
 
 * Complexity analysis top-down
 
-Time complexity: .
+Time complexity: O(n).
 
-Space complexity: .
+Space complexity: O(n).
 
 * keyword : dynamic-programming-card
