@@ -1,3 +1,4 @@
+from functools import cache
 from typing import List
 
 
@@ -19,4 +20,13 @@ class Solution:
         return rob_next
 
     def minCostClimbingStairsTD(self, cost: List[int]) -> int:
-        pass
+        @cache
+        def dp(i):
+            if i <= 1:
+                return 0
+
+            down_one = cost[i - 1] + dp(i - 1)
+            down_two = cost[i - 2] + dp(i - 2)
+            return min(down_one, down_two)
+
+        return dp(len(cost))
