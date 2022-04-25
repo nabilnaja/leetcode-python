@@ -1,4 +1,4 @@
-#### 21. Merge Two Sorted Lists
+#### 746. Min Cost Climbing Stairs
 
 * Description
 
