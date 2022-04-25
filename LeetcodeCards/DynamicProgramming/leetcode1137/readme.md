@@ -10,14 +10,14 @@ Given n, return the value of Tn.
 
 * Complexity analysis bottom-up
 
-Time complexity: .
+Time complexity: O(n).
 
-Space complexity: .
+Space complexity: O(1).
 
 * Complexity analysis top-down
 
-Time complexity: .
+Time complexity: O(n).
 
-Space complexity: .
+Space complexity: O(n).
 
 * keyword : dynamic-programming-card
