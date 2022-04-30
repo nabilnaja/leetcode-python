@@ -8,7 +8,7 @@ class Solution:
 
         @lru_cache(2000)
         def dp(i, left):
-            # Base case
+
             if i == m:
                 return 0
 
