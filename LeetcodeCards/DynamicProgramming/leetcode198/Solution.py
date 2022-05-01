@@ -1,37 +1,41 @@
 from typing import List
+from functools import cache
 
 
 class Solution:
+    def rob(self, nums: List[int]) -> int:
+        """
+        Sub problems : r(i) max money from i , i+1 untill n (suffix)
+        Original problem : r(0)
+        Relate : r(i) = max(nums[i] + r(i+2), r(i+1))
+        Base :  r(n) = 0
+        Topological order : n, n-1, .. , 0
+        Time : O(n) * O(1)
+        """
 
-    def robBU(self, nums: List[int]) -> int:
+        n = len(nums)
+
+        @cache
+        def dp(i):
+            if i >= n:
+                return 0
+            return max(dp(i + 2) + nums[i], dp(i + 1))
+
+        def dp():
+            memo = [None for _ in range(n + 1)]
+            memo[n - 1], memo[n] = nums[n - 1], 0
+            for i in range(n - 2, -1, -1):
+                memo[i] = max(memo[i + 2] + nums[i], memo[i + 1])
+            return memo[0]
+
+        def dp():
+            prev = nums[n - 1]
+            prevSec = 0
+            for i in range(n - 2, -1, -1):
+                prev, prevSec = max(prevSec + nums[i], prev), prev
+            return prev
+
         if not nums:
             return 0
-
-        N = len(nums)
-
-        rob_next_plus_one = 0
-        rob_next = nums[N - 1]
-
-        for i in range(N - 2, -1, -1):
-            best = max(rob_next_plus_one + nums[i], rob_next)
-            rob_next_plus_one, rob_next = rob_next, best
-
-        return rob_next
-
-    def robTD(self, nums: List[int]) -> int:
-        if not nums:
-            return 0
-        cache = {}
-
-        def dp(house=len(nums) - 1):
-            if house == 0:
-                return nums[0]
-            if house == 1:
-                return max(nums[0], nums[1])
-
-            if house not in cache:
-                cache[house] = max(dp(house - 2) + nums[house], dp(house - 1))
-
-            return cache[house]
 
         return dp()
