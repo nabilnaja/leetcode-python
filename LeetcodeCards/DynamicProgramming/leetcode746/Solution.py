@@ -3,30 +3,45 @@ from typing import List
 
 
 class Solution:
-
-    def minCostClimbingStairsBU(self, cost: List[int]) -> int:
-        if not cost:
-            return 0
-
+    def minCostClimbingStairs(self, cost: List[int]) -> int:
+        """
+        Sub problems : s(i) minimum cost  from stair i, i-1 .. until 0 (prefix)
+        Original problem : r(n)
+        Relate : r(i) = min (r(i - 1), r(i - 2)) + cost[i]
+        Base :  r(0) =
+        Topological order : 0 , 1, ..., n
+        Time : O(n) * O(1)
+        """
         n = len(cost)
 
-        rob_next_plus_one = 0
-        rob_next = cost[n - 1]
-
-        for i in range(n - 2, -1, -1):
-            best = max(rob_next_plus_one + cost[i], rob_next)
-            rob_next_plus_one, rob_next = rob_next, best
-
-        return rob_next
-
-    def minCostClimbingStairsTD(self, cost: List[int]) -> int:
         @cache
-        def dp(i):
+        def dp(i=n):
             if i <= 1:
                 return 0
+            oneStepI, twoStepI = i - 1, i - 2
+            oneStep = cost[oneStepI] + dp(oneStepI)
+            twoStep = cost[twoStepI] + dp(twoStepI)
 
-            down_one = cost[i - 1] + dp(i - 1)
-            down_two = cost[i - 2] + dp(i - 2)
-            return min(down_one, down_two)
+            return min(oneStep, twoStep)
 
-        return dp(len(cost))
+        def dp():
+            memo = [None for _ in range(n + 1)]
+            memo[0], memo[1] = 0, 0
+            for i in range(2, n + 1):
+                oneStepI, twoStepI = i - 1, i - 2
+                oneStep = cost[oneStepI] + memo[oneStepI]
+                twoStep = cost[twoStepI] + memo[twoStepI]
+                memo[i] = min(oneStep, twoStep)
+
+            return memo[i]
+
+        def dp():
+            prev, prevSec = 0, 0
+            for i in range(2, n + 1):
+                oneStep = cost[i - 1] + prev
+                twoStep = cost[i - 2] + prevSec
+                prev, prevSec = min(oneStep, twoStep), prev
+
+            return prev
+
+        return dp()
